@@ -1,7 +1,4 @@
-//If you find any mistakes or ways to improve let me know.
-// Rock paper scissors!
-
-var userChoice = prompt("Do you choose rock, paper or scissors?");
+var TT = console.log("Welcome to a randomized game of rock paper and scissors.");
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
 	computerChoice = "rock";
@@ -11,41 +8,11 @@ if (computerChoice < 0.34) {
 	computerChoice = "scissors";
 } console.log("Computer: " + computerChoice);
 
-var compare = function(userChoice, computerChoice){
-    if(choice1 === choice2){
-        return("The result is a tie!");
-        }
-    else if(choice1 === "rock") {
-            
-        if(choice2 === "scissors"){
-            return("rock wins");
-        }
-        else {
-            return("paper wins");
-        }
-    }
-    
-    else if(choice1 === "paper") {
-            
-        if(choice2 === "rock"){
-            return("paper wins");
-        }
-        else {
-            return("scissors wins");
-        }
-    }
-    
-     else if(choice1 === "scissors") {
-            
-        if(choice2 === "rock"){
-            return("rock wins");
-        }
-        else {
-            return("scissors wins");
-        }
-    }
-    
-    if(choice1 === "dog"){
-        return("That wasn't one of the options.")
-    }
-}
+var userChoice = Math.random();
+if (userChoice < 0.34) {
+	userChoice = "rock";
+} else if(userChoice <= 0.67) {
+	userChoice = "paper";
+} else {
+	userChoice = "scissors";
+} console.log("User: " + userChoice);
