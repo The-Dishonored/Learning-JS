@@ -17,4 +17,5 @@ if (userChoice < 0.34) {
 } else {
 	userChoice = "scissors";
 } console.log("User: " + userChoice);
-	
+
+console.log("The game is over, press enter and double click the batch file again.")
