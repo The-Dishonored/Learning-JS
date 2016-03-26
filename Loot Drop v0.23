@@ -1,0 +1,125 @@
+var running = 1;
+var silver = 0;
+var gold = 0;
+var diamond = 0;
+var money = 0;
+// Loot Function
+function lootdrop()
+{
+    alert ("You got...");
+    var chance = Math.random();
+    if (chance < 0.34) //Get Silver
+    {
+        alert ("You got x1 Silver...");
+        silver = silver + 1;
+    }
+    else if (chance < 0.67 && chance >=0.34) //Get Gold
+    {
+        alert ("You got x1 Gold");
+        gold = gold + 1;
+    }
+    else //Get Diamond
+    {
+        alert ("You got x1 Diamond!");
+        diamond = diamond + 1;
+    }
+}
+// Selling Function
+function shopsell()
+{
+        //SELL HERE
+            dec = prompt("Would you like to sell?... (s)ilver - 4$ (g)old - 6$ (d)iamond - 8$");
+            switch (dec)
+            {
+            	// If your selling silver
+            	case 's' :
+            		if(silver !== 0)
+            	{
+            		alert("You have sold x1 silver for 4$");
+            		money = money + 4;
+            		alert("You now have "+money+"$");
+            	}
+            	else
+            		alert("You don't have any silver.");
+            		break;
+            	// If your selling gold
+            	case 'g' :
+            		if(gold !== 0)
+            	{
+            		alert("You have sold x1 gold for 6$");
+            		money = money + 6;
+            		alert("You now have "+money+"$");
+            	}
+            	else
+            		alert("You don't have any gold!");
+            		break;
+            	// If your selling diamond	
+            	case 'd' :
+            		if(diamond !== 0)
+            		{
+            			alert("You have sold x1 diamond for 8$");
+            			money = money + 8;
+            			alert("You now have "+money+"$");
+            		}
+            		else
+            			
+            			alert("You don't have any diamonds!");
+            			break;
+            	}
+            
+           
+}
+// Buying system
+function buy()
+{
+	var dec = prompt("What would you like to buy?");
+}
+// Goals
+
+
+alert ("LOOT DROP v0.23");
+var Name = prompt ("Please enter your name...");
+alert ("Hello "+Name+"... Welcome to Loot Drop!");
+while (running === 1)
+{
+    alert("You have x"+silver+" Silver, x"+gold+" Gold, and x"+diamond+" Diamond...");
+    var dec = prompt ("Would you like to... (l)oot (s)hop (e)xit");
+    if (dec === "l") //Loot
+    {
+        looting=1;
+        while (looting === 1)
+        {
+            lootdrop();
+            dec = prompt ("Would you like to loot again? (y/n)");
+            if (dec === "n")
+            {
+                looting=0;
+            }
+            
+        }
+    }
+    else if (dec === "s") //Shop
+    {
+        //ADD SHOP HERE
+        alert("Hello! Welcome to the Shop.");
+        shopping=1;
+        dec = prompt("Would you like to... (b)uy (s)ell (e)xit");
+        if ( dec === "b")
+        {
+            buy();
+        }
+        else if ( dec === "s")
+        {
+            shopsell();
+        }
+        else if ( dec === "e")
+        {
+            shopping=0;
+        }
+    }
+    else if (dec === "e") //Exit
+    {
+        alert("Cya next time!");
+        running = 0;
+    }
+}
